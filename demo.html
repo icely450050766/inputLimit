@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title> inputLimit </title>
+    <link href="inputLimit.css" rel="stylesheet" type="text/css">
+
+    <script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="inputLimit.js"></script>
+</head>
+<body>
+
+    <input type="text" class="judgeEmpty" placeholder="判空">
+    <input type="text" class="judgeInt" placeholder="判整数">
+    <button onclick="judge()"> 判断 </button>
+    <br/><br/>
+
+    <input type="number" class="inputInt" placeholder="输入整数">
+    <input type="number" class="inputRange" placeholder="输入范围[0,3]的数">
+    <input type="number" class="inputToFixed" placeholder="保留两位小数">
+    <input type="text" class="inputTextNum" placeholder="输入不超过10个字">
+    <br/><br/>
+
+    <textarea class="inputTextDefault" placeholder="默认内容"></textarea>
+    <br/><br/>
+
+    <input type="text" class="inputNotEmpty" placeholder="非空">
+    <button onclick="submit()"> 提交 </button>
+
+
+    <script>
+
+        // 输入限制
+        inputLimit.inputInt('.inputInt'); // 输入整数
+        inputLimit.inputRange('.inputRange', 0, 3); // 输入范围[0,3]的数
+        inputLimit.inputToFixed('.inputToFixed', 2); // 保留两位小数
+        inputLimit.inputTextNum('.inputTextNum', 10); // 输入不超过10个字
+
+        inputLimit.inputTextDefault('.inputTextDefault', '这家伙很懒，什么也没留下。'); // 默认内容
+
+        // 判断
+        function judge(){
+            console.log( inputLimit.judgeEmpty('.judgeEmpty') );// 判空
+            console.log( inputLimit.judgeInt('.judgeInt') );// 判整数
+        }
+
+        // 提交
+        function submit(){
+            if( inputLimit.inputNotEmpty('.inputNotEmpty') ){
+                console.log('submit');
+            }
+        }
+
+    </script>
+</body>
+</html>

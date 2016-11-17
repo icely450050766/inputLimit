@@ -1,0 +1,21 @@
+/* 修改input获得焦点的 边框样式 */
+input,
+textarea{
+    /*outline: none; /!* 不要边框 *!/*/
+    /*outline-style: dotted;*/
+    outline-color: orange;
+}
+
+/* 输入框内容 为空 的样式 */
+.inputErrorTip::-moz-placeholder{
+    color: red !important;
+}
+.inputErrorTip:-ms-input-placeholder{
+    color: red !important;
+}
+.inputErrorTip::-webkit-input-placeholder{ /* placeholder 样式 */
+    color: red !important;
+}
+.inputErrorTip:focus{ /* 获得焦点的 边框样式 */
+    outline-color: red !important;
+}
